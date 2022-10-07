@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role/>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>john.dahl</sys_created_by>
+        <sys_created_on>2022-10-04 17:46:09</sys_created_on>
+        <sys_id>bbcec11e97de95106b6050081153af91</sys_id>
+        <sys_name>7bcec11e97de95106b6050081153af8f</sys_name>
+        <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
+        <sys_update_name>sys_embedded_help_role_bbcec11e97de95106b6050081153af91</sys_update_name>
+    </sys_embedded_help_role>
+</record_update>

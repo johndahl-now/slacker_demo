@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category/>
+        <description>An application to integration with Slack</description>
+        <device_type>browser</device_type>
+        <hint>Slack Integration</hint>
+        <name/>
+        <order>0</order>
+        <roles>x_803922_demo_slac.admin</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>john.dahl</sys_created_by>
+        <sys_created_on>2022-10-04 17:40:53</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ed7dcd9a97de95106b6050081153af71</sys_id>
+        <sys_name>Slacker</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
+        <sys_update_name>sys_app_application_ed7dcd9a97de95106b6050081153af71</sys_update_name>
+        <title>Slacker</title>
+        <view_name/>
+    </sys_app_application>
+</record_update>

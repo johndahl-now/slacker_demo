@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Slacker">ed7dcd9a97de95106b6050081153af71</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Commands</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_803922_demo_slac_command</name>
+        <order>10</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>john.dahl</sys_created_by>
+        <sys_created_on>2022-10-05 13:00:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>75f6d1e2975619106b6050081153af24</sys_id>
+        <sys_name>Commands</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
+        <sys_update_name>sys_app_module_75f6d1e2975619106b6050081153af24</sys_update_name>
+        <timeline_page/>
+        <title>Commands</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>

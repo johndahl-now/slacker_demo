@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="49c9d96a975619106b6050081153afb2" sys_domain="global" table="x_803922_demo_slac_command" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-10-05 13:12:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>11c91d6a975619106b6050081153af1a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_803922_demo_slac_command" name="x_803922_demo_slac_command" sys_domain="global" view="Default view">49c9d96a975619106b6050081153afb2</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_803922_demo_slac_command" sys_domain="global" view="Default view">eb399d2a975619106b6050081153af14</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-10-05 13:12:31</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-10-05 13:12:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1dc91d6a975619106b6050081153af1a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_803922_demo_slac_command" name="x_803922_demo_slac_command" sys_domain="global" view="Default view">49c9d96a975619106b6050081153afb2</sys_ui_form>
+            <sys_ui_section caption="New Section" display_value="New Section" name="x_803922_demo_slac_command" sys_domain="global" view="Default view">89c9d96a975619106b6050081153afb1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-10-05 13:12:31</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>john.dahl</sys_created_by>
+            <sys_created_on>2022-10-07 02:50:08</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f77e998397de99106b6050081153af91</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_803922_demo_slac_command" name="x_803922_demo_slac_command" sys_domain="global" view="Default view">49c9d96a975619106b6050081153afb2</sys_ui_form>
+            <sys_ui_section caption="Notes" display_value="Notes" name="x_803922_demo_slac_command" sys_domain="global" view="Default view">eb7e998397de99106b6050081153af8e</sys_ui_section>
+            <sys_updated_by>john.dahl</sys_updated_by>
+            <sys_updated_on>2022-10-07 02:50:08</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_803922_demo_slac_command</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-10-05 13:12:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>49c9d96a975619106b6050081153afb2</sys_id>
+            <sys_name>x_803922_demo_slac_command</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
+            <sys_update_name>sys_ui_form_sections_49c9d96a975619106b6050081153afb2</sys_update_name>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

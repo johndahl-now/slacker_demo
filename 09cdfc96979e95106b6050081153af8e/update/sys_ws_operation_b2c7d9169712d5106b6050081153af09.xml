@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>POST</http_method>
+        <name>Slack Event</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	
+	var si = new Slacker(),
+		payload = request.body.data;
+
+	if( payload.challenge ){   // Used by Slack to verify the URL when setting up the app
+		
+		response.setStatus( 200 );
+		response.setContentType( 'text/plain' );
+		response.getStreamWriter().writeString( payload.challenge );
+	}
+	else{   // Process valid commands submitted by users
+
+		if( si.isBotMessage( payload ) ) return null;
+
+		new global.GlideQuery( si.table_payload )
+		.insert( {
+			'payload': JSON.stringify( payload, null, 2 ),
+			'channel': payload.event.channel,
+			'timestamp': payload.event.ts,
+			'thread': payload.event.thread_ts || ''
+		} );
+	}
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_803922_demo_slac/slack_event_handler</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/</relative_path>
+        <request_example/>
+        <requires_acl_authorization>false</requires_acl_authorization>
+        <requires_authentication>false</requires_authentication>
+        <requires_snc_internal_role>false</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>john.dahl</sys_created_by>
+        <sys_created_on>2022-10-04 18:33:06</sys_created_on>
+        <sys_id>b2c7d9169712d5106b6050081153af09</sys_id>
+        <sys_name>Slack Event</sys_name>
+        <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
+        <sys_update_name>sys_ws_operation_b2c7d9169712d5106b6050081153af09</sys_update_name>
+        <web_service_definition display_value="Slack Event Handler">a787511a9712d5106b6050081153af26</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

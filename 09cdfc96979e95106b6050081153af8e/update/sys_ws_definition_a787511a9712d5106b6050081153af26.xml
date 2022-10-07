@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_definition">
+    <sys_ws_definition action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <base_uri>/api/x_803922_demo_slac/slack_event_handler</base_uri>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_version>No active default version</default_version>
+        <doc_link/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <is_versioned>false</is_versioned>
+        <name>Slack Event Handler</name>
+        <namespace>x_803922_demo_slac</namespace>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <service_id>slack_event_handler</service_id>
+        <short_description>ServiceNow API to handle Slack Events</short_description>
+        <sys_class_name>sys_ws_definition</sys_class_name>
+        <sys_created_by>john.dahl</sys_created_by>
+        <sys_created_on>2022-10-04 18:24:51</sys_created_on>
+        <sys_id>a787511a9712d5106b6050081153af26</sys_id>
+        <sys_name>Slack Event Handler</sys_name>
+        <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
+        <sys_update_name>sys_ws_definition_a787511a9712d5106b6050081153af26</sys_update_name>
+    </sys_ws_definition>
+</record_update>

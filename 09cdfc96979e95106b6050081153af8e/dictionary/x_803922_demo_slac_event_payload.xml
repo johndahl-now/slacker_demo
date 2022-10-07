@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="2028d55a9712d5106b6050081153af49" label="Event Payload" max_length="40" name="x_803922_demo_slac_event_payload" type="collection">
+        <element label="Channel" max_length="40" name="channel" type="string"/>
+        <element label="Payload" max_length="4000" name="payload" type="string"/>
+        <element label="Thread" max_length="40" name="thread" type="string"/>
+        <element label="Event Timestamp" max_length="40" name="timestamp" type="string"/>
+    </element>
+</database>
