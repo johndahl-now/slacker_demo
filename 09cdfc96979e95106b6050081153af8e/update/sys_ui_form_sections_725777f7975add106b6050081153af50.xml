@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="725777f7975add106b6050081153af50" sys_domain="global" table="x_803922_demo_slac_event_payload" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>john.dahl</sys_created_by>
+            <sys_created_on>2022-10-09 21:53:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fa5777f7975add106b6050081153afb6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_803922_demo_slac_event_payload" name="x_803922_demo_slac_event_payload" sys_domain="global" view="Default view">725777f7975add106b6050081153af50</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_803922_demo_slac_event_payload" sys_domain="global" view="Default view">6b3a99da9712d5106b6050081153afea</sys_ui_section>
+            <sys_updated_by>john.dahl</sys_updated_by>
+            <sys_updated_on>2022-10-09 21:53:26</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>john.dahl</sys_created_by>
+            <sys_created_on>2022-10-09 21:53:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f65777f7975add106b6050081153afb7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_803922_demo_slac_event_payload" name="x_803922_demo_slac_event_payload" sys_domain="global" view="Default view">725777f7975add106b6050081153af50</sys_ui_form>
+            <sys_ui_section caption="New Section" display_value="New Section" name="x_803922_demo_slac_event_payload" sys_domain="global" view="Default view">f25777f7975add106b6050081153af4e</sys_ui_section>
+            <sys_updated_by>john.dahl</sys_updated_by>
+            <sys_updated_on>2022-10-09 21:53:26</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_803922_demo_slac_event_payload</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>john.dahl</sys_created_by>
+            <sys_created_on>2022-10-09 21:53:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>725777f7975add106b6050081153af50</sys_id>
+            <sys_name>x_803922_demo_slac_event_payload</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
+            <sys_update_name>sys_ui_form_sections_725777f7975add106b6050081153af50</sys_update_name>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

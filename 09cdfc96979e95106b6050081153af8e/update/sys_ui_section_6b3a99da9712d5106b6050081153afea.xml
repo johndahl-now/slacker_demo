@@ -1,58 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="" section_id="6b3a99da9712d5106b6050081153afea" sys_domain="global" table="x_803922_demo_slac_event_payload" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>channel</element>
+            <element>user</element>
             <position>0</position>
             <sys_created_by>john.dahl</sys_created_by>
-            <sys_created_on>2022-10-07 02:04:35</sys_created_on>
-            <sys_id>20141907979e99106b6050081153af59</sys_id>
+            <sys_created_on>2022-10-09 21:53:26</sys_created_on>
+            <sys_id>fe5777f7975add106b6050081153afbf</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_803922_demo_slac_event_payload" sys_domain="global" view="Default view">6b3a99da9712d5106b6050081153afea</sys_ui_section>
             <sys_updated_by>john.dahl</sys_updated_by>
-            <sys_updated_on>2022-10-07 02:04:35</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>thread</element>
-            <position>1</position>
-            <sys_created_by>john.dahl</sys_created_by>
-            <sys_created_on>2022-10-07 02:04:35</sys_created_on>
-            <sys_id>a4141907979e99106b6050081153af59</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_803922_demo_slac_event_payload" sys_domain="global" view="Default view">6b3a99da9712d5106b6050081153afea</sys_ui_section>
-            <sys_updated_by>john.dahl</sys_updated_by>
-            <sys_updated_on>2022-10-07 02:04:35</sys_updated_on>
+            <sys_updated_on>2022-10-09 21:53:26</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>timestamp</element>
-            <position>2</position>
+            <position>1</position>
             <sys_created_by>john.dahl</sys_created_by>
-            <sys_created_on>2022-10-07 02:04:35</sys_created_on>
-            <sys_id>28141907979e99106b6050081153af59</sys_id>
+            <sys_created_on>2022-10-09 21:53:26</sys_created_on>
+            <sys_id>725777f7975add106b6050081153afc0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_803922_demo_slac_event_payload" sys_domain="global" view="Default view">6b3a99da9712d5106b6050081153afea</sys_ui_section>
             <sys_updated_by>john.dahl</sys_updated_by>
-            <sys_updated_on>2022-10-07 02:04:35</sys_updated_on>
+            <sys_updated_on>2022-10-09 21:53:26</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>payload</element>
-            <position>3</position>
+            <element>.split</element>
+            <position>2</position>
             <sys_created_by>john.dahl</sys_created_by>
-            <sys_created_on>2022-10-07 02:04:35</sys_created_on>
-            <sys_id>a8141907979e99106b6050081153af59</sys_id>
+            <sys_created_on>2022-10-09 21:53:26</sys_created_on>
+            <sys_id>f25777f7975add106b6050081153afc0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_803922_demo_slac_event_payload" sys_domain="global" view="Default view">6b3a99da9712d5106b6050081153afea</sys_ui_section>
             <sys_updated_by>john.dahl</sys_updated_by>
-            <sys_updated_on>2022-10-07 02:04:35</sys_updated_on>
+            <sys_updated_on>2022-10-09 21:53:26</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>channel</element>
+            <position>3</position>
+            <sys_created_by>john.dahl</sys_created_by>
+            <sys_created_on>2022-10-09 21:53:26</sys_created_on>
+            <sys_id>765777f7975add106b6050081153afc0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_803922_demo_slac_event_payload" sys_domain="global" view="Default view">6b3a99da9712d5106b6050081153afea</sys_ui_section>
+            <sys_updated_by>john.dahl</sys_updated_by>
+            <sys_updated_on>2022-10-09 21:53:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>thread</element>
+            <position>4</position>
+            <sys_created_by>john.dahl</sys_created_by>
+            <sys_created_on>2022-10-09 21:53:26</sys_created_on>
+            <sys_id>f65777f7975add106b6050081153afc0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_803922_demo_slac_event_payload" sys_domain="global" view="Default view">6b3a99da9712d5106b6050081153afea</sys_ui_section>
+            <sys_updated_by>john.dahl</sys_updated_by>
+            <sys_updated_on>2022-10-09 21:53:26</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
