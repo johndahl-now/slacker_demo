@@ -12,15 +12,15 @@
 	var si = new Slacker(),
 		payload = request.body.data;
 
-	if( payload.challenge ){   // Used by Slack to verify the URL when setting up the app
+	if( payload.challenge ){
+		si.debug( 'A URL Validation Challenge has been issued. Sending the Challenge response.' );
 		
 		response.setStatus( 200 );
 		response.setContentType( 'text/plain' );
 		response.getStreamWriter().writeString( payload.challenge );
 	}
-	else{   // Process valid commands submitted by users
-
-		if( si.isBotMessage( payload ) ) return null;
+	else{
+		si.debug( 'Saving the event payload.' );
 
 		new global.GlideQuery( si.table_payload )
 		.insert( {

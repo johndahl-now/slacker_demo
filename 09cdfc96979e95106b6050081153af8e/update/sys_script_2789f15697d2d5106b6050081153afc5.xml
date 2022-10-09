@@ -28,6 +28,7 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+		si.debug( 'Processing a new event payload.' );
 
 	var grCommand, payload, regex, si, slack_id, user_info;
 	si = new Slacker();

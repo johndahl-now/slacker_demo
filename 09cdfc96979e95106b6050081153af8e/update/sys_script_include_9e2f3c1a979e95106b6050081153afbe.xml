@@ -15,6 +15,8 @@ Slacker.prototype = {
 		this.table_payload = this.app_scope + '_event_payload',
 		this.table_command = this.app_scope + '_command',
 		this.property_slacker_token = gs.getProperty( this.app_scope + '.slacker.token' );
+		this.property_debug = this.check_boolean( gs.getProperty( this.app_scope + '.debug' ) );
+		if( this.property_debug ){ this.debug( 'Debugging enabled' ); }
     },
 
     type: 'Slacker',
@@ -123,11 +125,20 @@ Slacker.prototype = {
 		return payload.event.bot_id !== undefined;
 	},
 	
-	get_slack_user: function(){
-		
+	check_boolean: function( value ){
+		return value === 'false' ? false : value;
+	},
 
+	debug: function( message ){
+		if( this.property_debug )
+			gs.info( "Slacker: {0}", message );
+	},
+	
+	error: function( message, error ){
+		gs.error( "Slacker: {0}\nError: {1}: {2}", message, error.name, error.message );
+	},
+	
 
-	}
 	
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
