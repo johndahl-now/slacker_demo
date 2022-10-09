@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_803922_demo_slac.debug</name>
+        <read_roles>x_803922_demo_slac.bot</read_roles>
+        <suffix>debug</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>john.dahl</sys_created_by>
+        <sys_created_on>2022-10-09 21:32:09</sys_created_on>
+        <sys_id>d522fb7f971add106b6050081153af63</sys_id>
+        <sys_name>x_803922_demo_slac.debug</sys_name>
+        <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
+        <sys_update_name>sys_properties_d522fb7f971add106b6050081153af63</sys_update_name>
+        <type>boolean</type>
+        <value>true</value>
+        <write_roles>x_803922_demo_slac.admin</write_roles>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=d522fb7f971add106b6050081153af63"/>
+</record_update>
