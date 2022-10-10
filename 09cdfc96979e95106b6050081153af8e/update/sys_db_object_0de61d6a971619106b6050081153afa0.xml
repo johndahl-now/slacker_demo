@@ -28,7 +28,7 @@
         <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
         <sys_update_name>sys_db_object_0de61d6a971619106b6050081153afa0</sys_update_name>
         <update_access>false</update_access>
-        <user_role display_value="x_803922_demo_slac.admin" name="x_803922_demo_slac.admin">dafce9169792d5106b6050081153aff7</user_role>
+        <user_role display_value="x_803922_demo_slac.bot" name="x_803922_demo_slac.bot">c634b426979219106b6050081153af48</user_role>
         <ws_access>true</ws_access>
     </sys_db_object>
 </record_update>
