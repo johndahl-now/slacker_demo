@@ -21,6 +21,108 @@ Slacker.prototype = {
 
     type: 'Slacker',
 	
+	call_slack: function( http_method, api_method, payload, content_type ){
+		/* Given the parapmeters for a REST API call,
+		 * Call the Slack API method with the payload and 
+		 * return the response as a string.
+		 */
+		var request, response, token;
+		token = this.property_slacker_token;
+		
+		switch( content_type ){
+			case 'json':
+				content_type = 'application/json';
+				break;
+			case 'text':
+				content_type = 'application/text';
+				break;
+			default:
+				content_type = 'application/x-www-form-urlencoded';
+		}
+		
+		this.debug( 'API Request payload: ' + payload );
+		
+		try{
+			request = new sn_ws.RESTMessageV2();
+			request.setHttpMethod( http_method );
+			request.setRequestHeader( 'Content-Type', content_type );
+			request.setRequestHeader( 'Authorization', 'Bearer ' + token );
+			request.setEndpoint( 'https://slack.com/api/' + api_method + '?' + payload );
+			response = request.execute().getBody();
+			this.debug( 'API Response: ' + response );
+
+			return response;
+		}
+		catch( e ){
+			this.error( 
+				'An error occurred trying to call a Slack API.\nHTTP Method: ' + 
+				http_method + '\nAPI Method: ' + api_method + '\nPayload: ' + payload 
+			);
+			return null;
+		}
+	},
+	
+	update_user: function( slack_id ){
+		var existing_user, grUser, slack_user_profile, user_sys_id;
+		
+		slack_user_profile = JSON.parse( this.get_slack_user_profile( slack_id ) );
+		
+		this.debug( 'Update User: Slack Profile: ' + JSON.stringify( slack_user_profile, null, 2 ) );
+		
+		grUser = new GlideRecord( this.table_users );
+		grUser.addQuery( 'slack_username', slack_id );	
+		grUser.query();
+		
+		existing_user = grUser.next();
+		
+		if( !existing_user ){
+			this.debug( 'Initializing a new record.' );
+			
+			grUser.initialize();
+			grUser.setValue( 'slack_username', slack_id );
+			grUser.setValue( 'points_total', 0 );
+		}
+		
+		grUser.setValue( 'email', slack_user_profile.email );
+		grUser.setValue( 'first_name', slack_user_profile.first_name );
+		grUser.setValue( 'last_name', slack_user_profile.last_name );
+		grUser.setValue( 'phone', slack_user_profile.phone );
+		grUser.setValue( 'slack_profile', JSON.stringify( slack_user_profile ) );
+		grUser.setValue( 'title', slack_user_profile.title );
+		grUser.setValue( 'display_name', slack_user_profile.display_name || 
+						[ slack_user_profile.first_name, slack_user_profile.last_name ].join(' ') );
+		
+		if( existing_user ){
+			this.debug( 'Updating an existing record.' );
+			
+			user_sys_id = grUser.update();
+		}
+		else{
+			this.debug( 'Inserting the new record.' );
+			
+			user_sys_id = grUser.insert();
+		}
+		
+		return user_sys_id;
+	},
+
+	get_slack_user_profile: function( slack_id ){
+		var apiMethod, httpMethod, payload, response;
+		
+		httpMethod = 'GET';
+		apiMethod = 'users.profile.get';
+		payload = 'user=' + slack_id;
+		
+		response = this.call_slack( httpMethod, apiMethod, payload );
+
+		return JSON.stringify( JSON.parse( response ).profile );
+	},
+	
+	
+	
+	
+	/**************************************************************************************/
+	
 	get_user_name: function( userid ){
 		var gr = new GlideRecord( this.table_users );
 		gr.addQuery( 'slack_username', userid );
@@ -37,6 +139,15 @@ Slacker.prototype = {
 		var message, requestMessage;
 		
 		try{
+			var apiMethod, httpMethod, payload, response;
+
+			httpMethod = 'POST';
+			apiMethod = 'chat.postMessage';
+
+			response = this.call_slack( httpMethod, apiMethod, payload );
+
+			return JSON.parse( response ).profile;
+			
 			requestMessage = new sn_ws.RESTMessageV2();
 			requestMessage.setHttpMethod( 'POST' );
 			requestMessage.setEndpoint( 'https://slack.com/api/chat.postMessage' );

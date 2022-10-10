@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_803922_demo_slac_event_payload</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_803922_demo_slac_event_payload">userISNOTEMPTY^EQ<item endquery="false" field="user" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Check the user's profile</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	/*
+	 * Check to see if the Slack user who sent a message is already listed in Servicenow.
+	 * Create a new user if not found.
+	 */
+	var grUser, slack_id;
+	var si = new Slacker();
+	
+	slack_id = current.getValue( 'user' );
+
+	try{
+
+		grUser = new GlideRecord( si.table_users );
+		grUser.addQuery( 'slack_username', slack_id );
+		grUser.query();
+
+		if( !grUser.next() ){
+			si.debug( 'The slacker user ' + slack_id + ' was not found in ServiceNow. Creating a new user.' );
+
+			si.update_user( slack_id );
+			si.send_message( current, 'Congratulations on posting your first message <@' + slack_id + '>++' );
+		}
+		
+		return null;
+		
+	}
+	catch( e ){
+		si.error( 'An error occurred trying to update or create the user in the ' +	si.table_users + ' table.', e );
+		return null;
+	}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>john.dahl</sys_created_by>
+        <sys_created_on>2022-10-10 13:41:35</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5b7f0b4097e211106b6050081153afa1</sys_id>
+        <sys_name>Check the user's profile</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
+        <sys_update_name>sys_script_5b7f0b4097e211106b6050081153afa1</sys_update_name>
+        <template/>
+        <when>async_always</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=5b7f0b4097e211106b6050081153afa1"/>
+</record_update>
