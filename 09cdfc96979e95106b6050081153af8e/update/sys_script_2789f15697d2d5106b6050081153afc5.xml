@@ -6,7 +6,7 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>false</action_update>
-        <active>false</active>
+        <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -28,15 +28,12 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-		si.debug( 'Processing a new event payload.' );
-
 	var grCommand, payload, regex, si, slack_id, user_info;
 	si = new Slacker();
-	payload = JSON.parse( current.getValue( 'payload' ) );
+	text = current.getValue( 'text' );
 
-	// Check if the Slack user is listed in SeviceNow. Add them if not.
-	user_info = si.check_user( payload.event.user );
-	
+	si.debug( 'Processing a new event payload.' );
+
 	// Check for a command that matches the payload
 	grCommand = new GlideRecord( si.table_command);
 	grCommand.addEncodedQuery( 'active=true^regexISNOTEMPTY' );
@@ -45,7 +42,7 @@
 	
 	while( grCommand.next() ){
 		regex = new RegExp( grCommand.getValue( 'regex' ) );
-		if( payload.event.text.match( regex ) ){
+		if( text.match( regex ) ){
 			new GlideScopedEvaluator().evaluateScript( grCommand, 'script', { 'current': current } );
 		}
 

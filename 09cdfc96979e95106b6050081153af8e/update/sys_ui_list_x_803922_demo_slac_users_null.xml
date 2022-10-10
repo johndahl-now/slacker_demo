@@ -3,92 +3,122 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>slack_username</element>
-            <list_id display_value="x_803922_demo_slac_users" element="NULL" name="x_803922_demo_slac_users" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">33bd558397de99106b6050081153afc2</list_id>
+            <list_id display_value="x_803922_demo_slac_users" element="NULL" name="x_803922_demo_slac_users" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0d64df4897e211106b6050081153af57</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
             <sys_created_by>john.dahl</sys_created_by>
-            <sys_created_on>2022-10-07 02:46:52</sys_created_on>
-            <sys_id>3fbd558397de99106b6050081153afc2</sys_id>
+            <sys_created_on>2022-10-10 13:59:09</sys_created_on>
+            <sys_id>0964df4897e211106b6050081153af58</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>john.dahl</sys_updated_by>
-            <sys_updated_on>2022-10-07 02:46:52</sys_updated_on>
+            <sys_updated_on>2022-10-10 13:59:09</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>first_name</element>
-            <list_id display_value="x_803922_demo_slac_users" element="NULL" name="x_803922_demo_slac_users" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">33bd558397de99106b6050081153afc2</list_id>
+            <element>display_name</element>
+            <list_id display_value="x_803922_demo_slac_users" element="NULL" name="x_803922_demo_slac_users" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0d64df4897e211106b6050081153af57</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
             <sys_created_by>john.dahl</sys_created_by>
-            <sys_created_on>2022-10-07 02:46:52</sys_created_on>
-            <sys_id>bfbd558397de99106b6050081153afc2</sys_id>
+            <sys_created_on>2022-10-10 13:59:09</sys_created_on>
+            <sys_id>8964df4897e211106b6050081153af58</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>john.dahl</sys_updated_by>
-            <sys_updated_on>2022-10-07 02:46:52</sys_updated_on>
+            <sys_updated_on>2022-10-10 13:59:09</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>last_name</element>
-            <list_id display_value="x_803922_demo_slac_users" element="NULL" name="x_803922_demo_slac_users" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">33bd558397de99106b6050081153afc2</list_id>
+            <element>first_name</element>
+            <list_id display_value="x_803922_demo_slac_users" element="NULL" name="x_803922_demo_slac_users" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0d64df4897e211106b6050081153af57</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
             <sum>false</sum>
             <sys_created_by>john.dahl</sys_created_by>
-            <sys_created_on>2022-10-07 02:46:52</sys_created_on>
-            <sys_id>33bd558397de99106b6050081153afc3</sys_id>
+            <sys_created_on>2022-10-10 13:59:09</sys_created_on>
+            <sys_id>0d64df4897e211106b6050081153af58</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>john.dahl</sys_updated_by>
-            <sys_updated_on>2022-10-07 02:46:52</sys_updated_on>
+            <sys_updated_on>2022-10-10 13:59:09</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>email</element>
-            <list_id display_value="x_803922_demo_slac_users" element="NULL" name="x_803922_demo_slac_users" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">33bd558397de99106b6050081153afc2</list_id>
+            <element>last_name</element>
+            <list_id display_value="x_803922_demo_slac_users" element="NULL" name="x_803922_demo_slac_users" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0d64df4897e211106b6050081153af57</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
             <sum>false</sum>
             <sys_created_by>john.dahl</sys_created_by>
-            <sys_created_on>2022-10-07 02:46:52</sys_created_on>
-            <sys_id>b3bd558397de99106b6050081153afc3</sys_id>
+            <sys_created_on>2022-10-10 13:59:09</sys_created_on>
+            <sys_id>8d64df4897e211106b6050081153af58</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>john.dahl</sys_updated_by>
-            <sys_updated_on>2022-10-07 02:46:52</sys_updated_on>
+            <sys_updated_on>2022-10-10 13:59:09</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>phone</element>
-            <list_id display_value="x_803922_demo_slac_users" element="NULL" name="x_803922_demo_slac_users" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">33bd558397de99106b6050081153afc2</list_id>
+            <element>email</element>
+            <list_id display_value="x_803922_demo_slac_users" element="NULL" name="x_803922_demo_slac_users" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0d64df4897e211106b6050081153af57</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>4</position>
             <sum>false</sum>
             <sys_created_by>john.dahl</sys_created_by>
-            <sys_created_on>2022-10-07 02:46:52</sys_created_on>
-            <sys_id>37bd558397de99106b6050081153afc3</sys_id>
+            <sys_created_on>2022-10-10 13:59:09</sys_created_on>
+            <sys_id>0164df4897e211106b6050081153af59</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>john.dahl</sys_updated_by>
-            <sys_updated_on>2022-10-07 02:46:52</sys_updated_on>
+            <sys_updated_on>2022-10-10 13:59:09</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>servicenow_user</element>
-            <list_id display_value="x_803922_demo_slac_users" element="NULL" name="x_803922_demo_slac_users" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">33bd558397de99106b6050081153afc2</list_id>
+            <element>phone</element>
+            <list_id display_value="x_803922_demo_slac_users" element="NULL" name="x_803922_demo_slac_users" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0d64df4897e211106b6050081153af57</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>5</position>
             <sum>false</sum>
             <sys_created_by>john.dahl</sys_created_by>
-            <sys_created_on>2022-10-07 02:46:52</sys_created_on>
-            <sys_id>b7bd558397de99106b6050081153afc3</sys_id>
+            <sys_created_on>2022-10-10 13:59:09</sys_created_on>
+            <sys_id>8164df4897e211106b6050081153af59</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>john.dahl</sys_updated_by>
-            <sys_updated_on>2022-10-07 02:46:52</sys_updated_on>
+            <sys_updated_on>2022-10-10 13:59:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>bot</element>
+            <list_id display_value="x_803922_demo_slac_users" element="NULL" name="x_803922_demo_slac_users" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0d64df4897e211106b6050081153af57</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>john.dahl</sys_created_by>
+            <sys_created_on>2022-10-10 13:59:09</sys_created_on>
+            <sys_id>0564df4897e211106b6050081153af59</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>john.dahl</sys_updated_by>
+            <sys_updated_on>2022-10-10 13:59:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>servicenow_user</element>
+            <list_id display_value="x_803922_demo_slac_users" element="NULL" name="x_803922_demo_slac_users" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0d64df4897e211106b6050081153af57</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>john.dahl</sys_created_by>
+            <sys_created_on>2022-10-10 13:59:09</sys_created_on>
+            <sys_id>8564df4897e211106b6050081153af59</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>john.dahl</sys_updated_by>
+            <sys_updated_on>2022-10-10 13:59:09</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -102,10 +132,10 @@
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>john.dahl</sys_created_by>
-            <sys_created_on>2022-10-07 02:46:52</sys_created_on>
+            <sys_created_on>2022-10-10 13:59:09</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>33bd558397de99106b6050081153afc2</sys_id>
+            <sys_id>0d64df4897e211106b6050081153af57</sys_id>
             <sys_name>x_803922_demo_slac_users</sys_name>
             <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
             <sys_policy/>

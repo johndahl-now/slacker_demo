@@ -26,8 +26,8 @@ Slacker.prototype = {
 		 * Call the Slack API method with the payload and 
 		 * return the response as a string.
 		 */
-		var request, response, token;
-		token = this.property_slacker_token;
+		var request, response;
+		var token = this.property_slacker_token;
 		
 		switch( content_type ){
 			case 'json':
@@ -63,17 +63,15 @@ Slacker.prototype = {
 	},
 	
 	update_user: function( slack_id ){
-		var existing_user, grUser, slack_user_profile, user_sys_id;
-		
-		slack_user_profile = JSON.parse( this.get_slack_user_profile( slack_id ) );
+		var slack_user_profile = JSON.parse( this.get_slack_user_profile( slack_id ) );
 		
 		this.debug( 'Update User: Slack Profile: ' + JSON.stringify( slack_user_profile, null, 2 ) );
 		
-		grUser = new GlideRecord( this.table_users );
+		var grUser = new GlideRecord( this.table_users );
 		grUser.addQuery( 'slack_username', slack_id );	
 		grUser.query();
 		
-		existing_user = grUser.next();
+		var existing_user = grUser.next();
 		
 		if( !existing_user ){
 			this.debug( 'Initializing a new record.' );
@@ -95,67 +93,33 @@ Slacker.prototype = {
 		if( existing_user ){
 			this.debug( 'Updating an existing record.' );
 			
-			user_sys_id = grUser.update();
+			return grUser.update();
 		}
 		else{
 			this.debug( 'Inserting the new record.' );
 			
-			user_sys_id = grUser.insert();
+			return grUser.insert();
 		}
-		
-		return user_sys_id;
 	},
 
 	get_slack_user_profile: function( slack_id ){
-		var apiMethod, httpMethod, payload, response;
+		var httpMethod = 'GET';
+		var apiMethod = 'users.profile.get';
+		var payload = 'user=' + slack_id;
 		
-		httpMethod = 'GET';
-		apiMethod = 'users.profile.get';
-		payload = 'user=' + slack_id;
-		
-		response = this.call_slack( httpMethod, apiMethod, payload );
+		var response = this.call_slack( httpMethod, apiMethod, payload );
 
 		return JSON.stringify( JSON.parse( response ).profile );
 	},
 	
-	
-	
-	
-	/**************************************************************************************/
-	
-	get_user_name: function( userid ){
-		var gr = new GlideRecord( this.table_users );
-		gr.addQuery( 'slack_username', userid );
-		gr.query();
-		
-		if( gr.next() ){
-			return gr.getValue( 'first_name' ) + ' ' + gr.getValue( 'last_name' );
-		}
-		
-		return null;
-	},
-	
 	send_message: function( grPayload, text, force_thread ){
-		var message, requestMessage;
-		
+
 		try{
-			var apiMethod, httpMethod, payload, response;
+			var response;
 
-			httpMethod = 'POST';
-			apiMethod = 'chat.postMessage';
-
-			response = this.call_slack( httpMethod, apiMethod, payload );
-
-			return JSON.parse( response ).profile;
-			
-			requestMessage = new sn_ws.RESTMessageV2();
-			requestMessage.setHttpMethod( 'POST' );
-			requestMessage.setEndpoint( 'https://slack.com/api/chat.postMessage' );
-			requestMessage.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
-			requestMessage.setRequestHeader( 'Authorization', 'Bearer ' + this.property_slacker_token );
-
-
-			message = [ '&channel=' + gs.urlEncode( grPayload.getValue( 'channel' ) ) ];
+			var httpMethod = 'POST';
+			var apiMethod = 'chat.postMessage';
+			var message = [ '&channel=' + gs.urlEncode( grPayload.getValue( 'channel' ) ) ];
 			
 			if( !grPayload.thread.nil() ){
 				message.push( '&thread_ts=' + gs.urlEncode( grPayload.getValue( 'thread' ) ) );
@@ -165,71 +129,18 @@ Slacker.prototype = {
 			}
 			
 			message.push( '&text=' + gs.urlEncode( text ) );
+			message = message.join('');
+
+			this.debug( 'Sending a message to Slack: ' + message );
+			response = this.call_slack( httpMethod, apiMethod, message );
+			this.debug( 'Received a response from Slack: ' + response );
 			
-			requestMessage.setRequestBody( message.join('') );
-			return requestMessage.execute();
-			
+			return response;
 		}
 		catch( e ){
 			gs.error( 'Slacker: An error occurred sending a message to Slack.\nError: ' + e.name + ': ' + e.message );
 			return null;
 		}
-	},
-	
-	check_user: function( slack_id ){
-		/* Make sure the Slack user that sent a message has a matching user record in ServiceNow. */
-		var response, response_body, requestMessage, slack_user_data, user_sys_id;
-		
-		try{	// Get the user's profile information from Slack
-			
-			requestMessage = new sn_ws.RESTMessageV2();
-			requestMessage.setHttpMethod('GET');
-			requestMessage.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
-			requestMessage.setRequestHeader( 'Authorization', 'Bearer ' + this.property_slacker_token );
-			requestMessage.setEndpoint( 'https://slack.com/api/users.profile.get?user=' + slack_id );
-			response = requestMessage.execute();
-			
-			slack_user_data = JSON.parse( response.getBody() ).profile;
-			
-		}
-		catch( e ){
-			gs.error( 'Slacker: An error occurred retrieving user information from Slack.\nError: ' + e.name + ': ' + e.message );
-			return null;
-		}
-
-		try{	// Check to see if the user already has a record in ServiceNow or create one
-
-			grUser = new GlideRecord( this.table_users );
-			grUser.addQuery( 'slack_username', slack_id );
-			grUser.query();
-
-			if( grUser.next() ){
-				user_sys_id = grUser.getUniqueValue();
-				grUser.setValue( 'email', slack_user_data.email );
-				grUser.setValue( 'first_name', slack_user_data.first_name );
-				grUser.setValue( 'last_name', slack_user_data.last_name );
-				grUser.setValue( 'phone', slack_user_data.phone );
-				grUser.setValue( 'title', slack_user_data.title );
-				grUser.update();
-			}
-			else{
-				grUser.initialize();
-				grUser.setValue( 'slack_username', slack_id );
-				grUser.setValue( 'email', slack_user_data.email );
-				grUser.setValue( 'first_name', slack_user_data.first_name );
-				grUser.setValue( 'last_name', slack_user_data.last_name );
-				grUser.setValue( 'phone', slack_user_data.phone );
-				grUser.setValue( 'title', slack_user_data.title );
-				user_sys_id = grUser.insert();
-			}
-			
-			return user_sys_id;
-		}
-		catch( e ){
-			gs.error( 'Slacker: An error occurred trying to update or create the user in the ' + this.table_users + ' table.\nError: ' + e.name + ': ' + e.message );
-			return null;
-		}
-		
 	},
 	
 	isBotMessage: function( payload ){
