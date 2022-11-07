@@ -12,14 +12,41 @@ Slacker.prototype = {
     initialize: function(){
 		this.app_scope = gs.getCurrentScopeName();
 		this.table_users = this.app_scope + '_users';
-		this.table_payload = this.app_scope + '_event_payload',
-		this.table_command = this.app_scope + '_command',
-		this.property_slacker_token = gs.getProperty( this.app_scope + '.slacker.token' );
-		this.property_debug = this.check_boolean( gs.getProperty( this.app_scope + '.debug' ) );
-		if( this.property_debug ){ this.debug( 'Debugging enabled' ); }
+		this.table_payload = this.app_scope + '_event_payload';
+		this.table_command = this.app_scope + '_command';
+		this.table_point = this.app_scope + '_point';
+		this.property_slacker_token = this.get_property( 'demo.slacker.token' );
+		this.property_debug = this.get_property( this.app_scope + '.debug', true );
     },
 
     type: 'Slacker',
+	
+	delete_thread: function( channel, timestamp ){
+		/* 
+		 * Given the timestamp of a root-level message that was deleted,
+		 * Delete all messages where that timestamp is listed as a thread.
+		 */
+		
+		this.debug( 'Starting to delete the thread ' + timestamp );
+		
+		var grPayload, payload, ts;
+		grPayload = new GlideRecord( this.table_payload );
+		grPayload.addQuery( 'thread', timestamp );
+		grPayload.query();
+		
+		while( grPayload.next() ){
+			ts = grPayload.getValue( 'timestamp' );
+			payload = 'channel=' + channel + '&ts=' + ts;
+			
+			this.debug( 
+				'Deleting message in the ' + channel + 
+				' channel posted at ' + ts + ': ' + grPayload.getValue( 'text' ) 
+			);
+			
+			this.call_slack( 'POST', 'chat.delete', payload );
+		}
+		
+	},
 	
 	call_slack: function( http_method, api_method, payload, content_type ){
 		/* Given the parapmeters for a REST API call,
@@ -85,7 +112,7 @@ Slacker.prototype = {
 		grUser.setValue( 'first_name', slack_user_profile.first_name );
 		grUser.setValue( 'last_name', slack_user_profile.last_name );
 		grUser.setValue( 'phone', slack_user_profile.phone );
-		grUser.setValue( 'slack_profile', JSON.stringify( slack_user_profile ) );
+		grUser.setValue( 'slack_profile', JSON.stringify( slack_user_profile, null, 2 ) );
 		grUser.setValue( 'title', slack_user_profile.title );
 		grUser.setValue( 'display_name', slack_user_profile.display_name || 
 						[ slack_user_profile.first_name, slack_user_profile.last_name ].join(' ') );
@@ -147,8 +174,19 @@ Slacker.prototype = {
 		return payload.event.bot_id !== undefined;
 	},
 	
+	isBotUser: function( slack_id ){
+		var gaUser = new GlideRecord( this.table_users );
+		gaUser.get( 'slack_username', slack_id );
+		return this.check_boolean( gaUser.getValue( 'bot' ) );
+	},
+	
 	check_boolean: function( value ){
-		return value === 'false' ? false : value;
+		return ( value === 'false' || value === '0' ) ? false : value;
+	},
+	
+	get_property: function( property_name, boolean ){
+		var prop = gs.getProperty( property_name );
+		return boolean ? this.check_boolean( prop ) : prop;
 	},
 
 	debug: function( message ){

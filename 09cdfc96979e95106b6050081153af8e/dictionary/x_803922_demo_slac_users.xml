@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="da9e491e97de95106b6050081153af91" label="Slack Users" max_length="40" name="x_803922_demo_slac_users" type="collection">
         <element label="Bot" max_length="40" name="bot" type="boolean"/>
-        <element label="Display name" max_length="100" name="display_name" type="string"/>
-        <element label="Email" max_length="100" name="email" type="string" unique="true"/>
+        <element display="true" label="Display name" max_length="100" name="display_name" type="string"/>
+        <element label="Email" max_length="100" name="email" type="string"/>
         <element label="First name" max_length="40" name="first_name" type="string"/>
         <element label="Last name" max_length="40" name="last_name" type="string"/>
         <element label="Phone" max_length="40" name="phone" type="string"/>
-        <element attributes="ref_ac_columns=user_name;email,ref_ac_columns_search=true,ref_auto_complete=AJAXTableCompleter" label="ServiceNow user" max_length="32" name="servicenow_user" reference="sys_user" type="reference" unique="true"/>
+        <element attributes="ref_ac_columns=user_name;email,ref_ac_columns_search=true,ref_auto_complete=AJAXTableCompleter" label="ServiceNow user" max_length="32" name="servicenow_user" reference="sys_user" type="reference"/>
         <element label="Slack profile" max_length="4000" name="slack_profile" type="string"/>
         <element label="Slack ID" max_length="40" name="slack_username" type="string" unique="true"/>
         <element label="Title" max_length="100" name="title" type="string"/>
-        <index name="index" unique="true">
+        <index name="index">
             <element name="email"/>
         </index>
-        <index name="index2" unique="true">
+        <index name="index2">
             <element name="servicenow_user"/>
         </index>
         <index name="index3" unique="true">

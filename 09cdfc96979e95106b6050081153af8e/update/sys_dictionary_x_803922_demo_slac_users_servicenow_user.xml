@@ -59,7 +59,7 @@
         <sys_update_name>sys_dictionary_x_803922_demo_slac_users_servicenow_user</sys_update_name>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
-        <unique>true</unique>
+        <unique>false</unique>
         <use_dependent_field>false</use_dependent_field>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>

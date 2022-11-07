@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="0d306b48972611106b6050081153afa7" label="Point" max_length="40" name="x_803922_demo_slac_point" type="collection">
+        <element label="Giver" max_length="40" name="giver" type="string"/>
+        <element label="Recipient" max_length="40" name="recipient" type="string"/>
+        <index name="index">
+            <element name="giver"/>
+        </index>
+        <index name="index2">
+            <element name="recipient"/>
+        </index>
+    </element>
+</database>

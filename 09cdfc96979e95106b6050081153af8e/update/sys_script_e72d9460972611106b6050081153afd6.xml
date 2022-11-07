@@ -2,8 +2,8 @@
     <sys_script action="INSERT_OR_UPDATE">
         <abort_action>false</abort_action>
         <access>package_private</access>
-        <action_delete>false</action_delete>
-        <action_insert>true</action_insert>
+        <action_delete>true</action_delete>
+        <action_insert>false</action_insert>
         <action_query>false</action_query>
         <action_update>false</action_update>
         <active>true</active>
@@ -11,14 +11,14 @@
         <advanced>true</advanced>
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
-        <collection>x_803922_demo_slac_event_payload</collection>
+        <collection>x_803922_demo_slac_users</collection>
         <condition/>
         <description/>
         <execute_function>false</execute_function>
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>Process New Events</name>
+        <name>Cascade User Deletions</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -28,46 +28,45 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-	var grCommand, payload, regex, si, slack_id, user_info;
-	si = new Slacker();
-	text = current.getValue( 'text' );
+	/* When a user record is deleted, 
+	 * delete all message payloads for the user.
+	 */
 
-	si.debug( 'Processing a new event payload.' );
-
-	// Check for a command that matches the payload
-	grCommand = new GlideRecord( si.table_command);
-	grCommand.addEncodedQuery( 'active=true^regexISNOTEMPTY' );
-	grCommand.orderBy( 'order' );
-	grCommand.query();
+	var si = new Slacker();
+	var user = current.slack_username;
 	
-	while( grCommand.next() ){
-		regex = new RegExp( grCommand.getValue( 'regex' ) );
-		if( text.match( regex ) ){
-			new GlideScopedEvaluator().evaluateScript( grCommand, 'script', { 'current': current } );
-// 			if( grCommand.getValue( stop_processing ) == '1' ){
-// 				return null;
-// 			}
+	var grPayload = new GlideRecord( si.table_payload );
+	grPayload.addQuery( 'user', user );
+	grPayload.deleteMultiple();
+	
+	var grPoint = new GlideRecord( si.table_point );
+	grPoint.addEncodedQuery( 'giver=' + user + '^ORrecipient=' + user );
+	grPoint.query();
+	while( grPoint.next() ){
+		if( user == grPoint.getValue( 'giver' ) ){
+			grPoint.setValue( 'giver', '' );
 		}
-
+		else{
+			grPoint.setValue( 'recipient', '' );
+		}
+		grPoint.update();
 	}
-	
-	
 	
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>john.dahl</sys_created_by>
-        <sys_created_on>2022-10-04 20:59:39</sys_created_on>
+        <sys_created_on>2022-10-11 13:57:42</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>2789f15697d2d5106b6050081153afc5</sys_id>
-        <sys_name>Process New Events</sys_name>
+        <sys_id>e72d9460972611106b6050081153afd6</sys_id>
+        <sys_name>Cascade User Deletions</sys_name>
         <sys_overrides/>
         <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
-        <sys_update_name>sys_script_2789f15697d2d5106b6050081153afc5</sys_update_name>
+        <sys_update_name>sys_script_e72d9460972611106b6050081153afd6</sys_update_name>
         <template/>
-        <when>async_always</when>
+        <when>after</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=2789f15697d2d5106b6050081153afc5"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=e72d9460972611106b6050081153afd6"/>
 </record_update>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="email" table="x_803922_demo_slac_users">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="giver" table="x_803922_demo_slac_point">
         <active>true</active>
         <array>false</array>
         <attributes/>
@@ -13,7 +13,7 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Email</column_label>
+        <column_label>Giver</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -26,7 +26,7 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>email</element>
+        <element>giver</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -34,8 +34,8 @@
         <function_field>false</function_field>
         <internal_type display_value="String">string</internal_type>
         <mandatory>false</mandatory>
-        <max_length>100</max_length>
-        <name>x_803922_demo_slac_users</name>
+        <max_length>40</max_length>
+        <name>x_803922_demo_slac_point</name>
         <next_element/>
         <primary>false</primary>
         <read_only>false</read_only>
@@ -51,12 +51,12 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>john.dahl</sys_created_by>
-        <sys_created_on>2022-10-04 22:02:19</sys_created_on>
-        <sys_name>Email</sys_name>
+        <sys_created_on>2022-10-10 14:52:40</sys_created_on>
+        <sys_name>Giver</sys_name>
         <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
-        <sys_update_name>sys_dictionary_x_803922_demo_slac_users_email</sys_update_name>
+        <sys_update_name>sys_dictionary_x_803922_demo_slac_point_giver</sys_update_name>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

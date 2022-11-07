@@ -8,11 +8,10 @@
         <http_method>POST</http_method>
         <name>Slack Event</name>
         <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
-	var channel, event, payload, si, text, thread, timestamp, user;
+	var channel, event, payload, text, thread, timestamp, user;
+	var si = new Slacker();
+	si.debug( 'Debugging enabled' );
 	
-	si = new Slacker();
-	si.debug( 'Debugging is enabled.' );
-
 	payload = request.body.data;
 	event = payload.event;
 	channel = event.channel;
@@ -22,30 +21,30 @@
 	thread = event.thread_ts || null;
 
 	if( payload.challenge ){   // Used by Slack to verify the URL when setting up the app
-		si.debug( 'Received a verification challenge. Sending a response.' );
-		
 		response.setStatus( 200 );
 		response.setContentType( 'text/plain' );
 		response.getStreamWriter().writeString( payload.challenge );
+		return null;
 	}
-	else{   // Process valid commands submitted by users
-		
-		payload = JSON.stringify( payload, null, 2 );
-		
-		var gr = new GlideRecord( si.table_payload );
-		gr.initialize();
-		gr.setValue( 'payload', payload );
-		gr.setValue( 'channel', channel );
-		gr.setValue( 'timestamp', timestamp );
-		gr.setValue( 'thread', thread );
-		gr.setValue( 'user', user );
-		gr.setValue( 'text', text );
-		gr.insert();
-		
-		si.debug( 'Payload saved: ' + gr.getUniqueValue() + '\n' + payload );
-		
-	}
+	
+// 	if( ['message_changed', 'message_deleted'].includes( event.subtype ) ){
+// 		return null;
+// 	}
 
+	payload = JSON.stringify( payload, null, 2 );
+
+	var grPayload = new GlideRecord( si.table_payload );
+	grPayload.initialize();
+	grPayload.setValue( 'channel', channel );
+	grPayload.setValue( 'payload', payload );
+	grPayload.setValue( 'text', text );
+	grPayload.setValue( 'thread', thread );
+	grPayload.setValue( 'timestamp', timestamp );
+	grPayload.setValue( 'user', user );
+	grPayload.insert();
+
+	si.debug( 'Payload saved: ' + grPayload.getUniqueValue() + '\n' + payload );
+		
 })(request, response);]]></operation_script>
         <operation_uri>/api/x_803922_demo_slac/slack_event_handler</operation_uri>
         <produces>application/json,application/xml,text/xml</produces>

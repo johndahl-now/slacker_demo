@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_related sys_domain="global" table="x_803922_demo_slac_users" version="2" view="">
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Slack Users - Default view" name="x_803922_demo_slac_users" related_list="NULL" sys_domain="global" view="Default view">a4599c2c97e211106b6050081153af77</list_id>
+            <order_by/>
+            <position>0</position>
+            <related_list>REL:ece1d0a097e211106b6050081153af8a</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>john.dahl</sys_created_by>
+            <sys_created_on>2022-10-11 13:38:47</sys_created_on>
+            <sys_id>68599c2c97e211106b6050081153af78</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>john.dahl</sys_updated_by>
+            <sys_updated_on>2022-10-11 13:38:47</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Slack Users - Default view" name="x_803922_demo_slac_users" related_list="NULL" sys_domain="global" view="Default view">a4599c2c97e211106b6050081153af77</list_id>
+            <order_by/>
+            <position>1</position>
+            <related_list>REL:51c590e497e211106b6050081153af03</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>john.dahl</sys_created_by>
+            <sys_created_on>2022-10-11 13:38:47</sys_created_on>
+            <sys_id>a0599c2c97e211106b6050081153af79</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>john.dahl</sys_updated_by>
+            <sys_updated_on>2022-10-11 13:38:47</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Slack Users - Default view" name="x_803922_demo_slac_users" related_list="NULL" sys_domain="global" view="Default view">a4599c2c97e211106b6050081153af77</list_id>
+            <order_by/>
+            <position>2</position>
+            <related_list>REL:26e55ce497e211106b6050081153af51</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>john.dahl</sys_created_by>
+            <sys_created_on>2022-10-11 13:38:47</sys_created_on>
+            <sys_id>a4599c2c97e211106b6050081153af79</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>john.dahl</sys_updated_by>
+            <sys_updated_on>2022-10-11 13:38:47</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list action="INSERT_OR_UPDATE">
+            <calculated_name>Slack Users - Default view</calculated_name>
+            <filter/>
+            <name>x_803922_demo_slac_users</name>
+            <order_by/>
+            <position/>
+            <related_list/>
+            <sys_class_name>sys_ui_related_list</sys_class_name>
+            <sys_created_by>john.dahl</sys_created_by>
+            <sys_created_on>2022-10-11 13:38:47</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a4599c2c97e211106b6050081153af77</sys_id>
+            <sys_name>Slack Users - Default view</sys_name>
+            <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
+            <sys_update_name>sys_ui_related_x_803922_demo_slac_users_null</sys_update_name>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_related_list>
+    </sys_ui_related>
+</record_update>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="DELETE">
+        <choices/>
+        <description>The BOT Token used to interact with the Slack application. DO NOT LEAVE THE VALUE POPULATED WHEN COMMITTING CHANGES TO A REPO.</description>
+        <ignore_cache>true</ignore_cache>
+        <is_private>true</is_private>
+        <name>x_803922_demo_slac.slacker.token</name>
+        <read_roles>x_803922_demo_slac.bot</read_roles>
+        <suffix>slacker.token</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>john.dahl</sys_created_by>
+        <sys_created_on>2022-10-04 16:40:39</sys_created_on>
+        <sys_id>638f745a979e95106b6050081153af61</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_803922_demo_slac.slacker.token</sys_name>
+        <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
+        <sys_update_name>sys_properties_638f745a979e95106b6050081153af61</sys_update_name>
+        <sys_updated_by>john.dahl</sys_updated_by>
+        <sys_updated_on>2022-10-12 13:04:48</sys_updated_on>
+        <type>string</type>
+        <value/>
+        <write_roles>x_803922_demo_slac.admin</write_roles>
+    </sys_properties>
+    <sys_translated_text action="DELETE" query="documentkey=638f745a979e95106b6050081153af61"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</application>
+        <file_path/>
+        <instance_id>fea09001db5a1300ff27d5b0cf961905</instance_id>
+        <instance_name>dev60079</instance_name>
+        <name>sys_properties_638f745a979e95106b6050081153af61</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties"><sys_properties action="INSERT_OR_UPDATE"><choices/><description>The BOT Token used to interact with the Slack application. DO NOT LEAVE THE VALUE POPULATED WHEN COMMITTING CHANGES TO A REPO.</description><ignore_cache>true</ignore_cache><is_private>true</is_private><name>x_803922_demo_slac.slacker.token</name><read_roles>x_803922_demo_slac.bot</read_roles><suffix>slacker.token</suffix><sys_class_name>sys_properties</sys_class_name><sys_created_by>john.dahl</sys_created_by><sys_created_on>2022-10-04 16:40:39</sys_created_on><sys_id>638f745a979e95106b6050081153af61</sys_id><sys_mod_count>2</sys_mod_count><sys_name>x_803922_demo_slac.slacker.token</sys_name><sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package><sys_policy/><sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope><sys_update_name>sys_properties_638f745a979e95106b6050081153af61</sys_update_name><sys_updated_by>john.dahl</sys_updated_by><sys_updated_on>2022-10-12 13:04:48</sys_updated_on><type>string</type><value/><write_roles>x_803922_demo_slac.admin</write_roles></sys_properties><sys_translated_text action="delete_multiple" query="documentkey=638f745a979e95106b6050081153af61"/></record_update>]]></payload>
+        <payload_hash>-164804578</payload_hash>
+        <record_name>x_803922_demo_slac.slacker.token</record_name>
+        <reverted_from/>
+        <source>e473599797921d106b6050081153af5c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>john.dahl</sys_created_by>
+        <sys_created_on>2022-10-12 13:04:49</sys_created_on>
+        <sys_id>f02bd5bc97a211106b6050081153af5c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>183cc4c33b00000001</sys_recorded_at>
+        <sys_updated_by>john.dahl</sys_updated_by>
+        <sys_updated_on>2022-10-12 13:04:49</sys_updated_on>
+        <type>System Property</type>
+        <update_guid>3c2bd5bc53a21110e98457a1a352b95b</update_guid>
+        <update_guid_history>3c2bd5bc53a21110e98457a1a352b95b:-164804578,82221b8443e211102ba4bacb7f8e973d:0,5dbc3fbf535add1093270ff3362bdccb:1894922864,0c893bbb225add108320f9ad37c1f7a0:0,5859b3bbe15add10b864ef1f983fbfdc:0,b9f6b7b7055add107dc581423100c0fb:-445444761,1691ffbf411add10a0538ecc36c2e2d1:0,0d613bbf4f1add10b46f915f2bf3876c:-164804578,955fabbbde1add1006cc3126b0c9d0b7:0,d34fd777ccd6dd10746992d6a8a85ebf:-445444761,a7b6d55349d21d109811385553a671f0:-676057719,071659d300d21d105520341df37fbd26:-1955410333,da65159380d21d10952245fd044eae55:-164804578,197705ee9ed21910984bd400310f6665:-1955410333,4f37cdae4ed21910c330720092ca73ed:1202969138,66b7215e0052d5105f85167fbf7b989d:-2042252419,64dff896459e951006a984ef2a13dbfe:1429937378</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>john.dahl</sys_created_by>
+        <sys_created_on>2022-10-12 13:05:38</sys_created_on>
+        <sys_db_object display_value="" name="sys_properties">sys_properties</sys_db_object>
+        <sys_id>1a1d0132b79e4d12bf8d11123438d964</sys_id>
+        <sys_metadata>638f745a979e95106b6050081153af61</sys_metadata>
+        <sys_name>x_803922_demo_slac.slacker.token</sys_name>
+        <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
+        <sys_scope_delete display_value="">2d78592dfadd4bcb8eb55a40bef05bd9</sys_scope_delete>
+        <sys_update_name>sys_properties_638f745a979e95106b6050081153af61</sys_update_name>
+        <sys_update_version display_value="sys_properties_638f745a979e95106b6050081153af61">f02bd5bc97a211106b6050081153af5c</sys_update_version>
+    </sys_metadata_delete>
+</record_update>

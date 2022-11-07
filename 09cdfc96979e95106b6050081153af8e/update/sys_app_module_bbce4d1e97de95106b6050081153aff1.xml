@@ -13,7 +13,7 @@
         <mobile_title>Slack Users</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
         <name>x_803922_demo_slac_users</name>
-        <order>10</order>
+        <order>400</order>
         <override_menu_roles>false</override_menu_roles>
         <query/>
         <report/>

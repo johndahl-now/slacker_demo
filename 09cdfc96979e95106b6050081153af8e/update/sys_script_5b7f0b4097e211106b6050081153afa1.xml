@@ -38,6 +38,13 @@
 	var si = new Slacker();
 	
 	slack_id = current.getValue( 'user' );
+	
+	if( slack_id == 'undefined' ){
+		var payload = JSON.parse( current.getValue( 'payload' ) );
+		var auth_user = payload.authorizations.user_id;
+		si.update_user( auth_user );
+		current.setValue( 'user', auth_user );
+	}
 
 	try{
 
