@@ -14,13 +14,13 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ed7dcd9a97de95106b6050081153af71</sys_id>
-        <sys_name>Slacker</sys_name>
+        <sys_name>Demo Slacker</sys_name>
         <sys_overrides/>
         <sys_package display_value="Demo Slacker" source="x_803922_demo_slac">09cdfc96979e95106b6050081153af8e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
         <sys_update_name>sys_app_application_ed7dcd9a97de95106b6050081153af71</sys_update_name>
-        <title>Slacker</title>
+        <title>Demo Slacker</title>
         <view_name/>
     </sys_app_application>
 </record_update>
