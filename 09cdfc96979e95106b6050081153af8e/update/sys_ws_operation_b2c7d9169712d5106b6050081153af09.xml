@@ -14,13 +14,7 @@
 	si.debug( 'Debugging is enabled.' );
 
 	payload = request.body.data;
-	event = payload.event;
-	channel = event.channel;
-	timestamp = event.ts;
-	user = event.user;
-	text = event.text;
-	thread = event.thread_ts || null;
-
+	
 	if( payload.challenge ){   // Used by Slack to verify the URL when setting up the app
 		si.debug( 'Received a verification challenge. Sending a response.' );
 		
@@ -29,7 +23,13 @@
 		response.getStreamWriter().writeString( payload.challenge );
 	}
 	else{   // Process valid commands submitted by users
-		
+		event = payload.event;
+		channel = event.channel;
+		timestamp = event.ts;
+		user = event.user;
+		text = event.text;
+		thread = event.thread_ts || null;
+	
 		payload = JSON.stringify( payload, null, 2 );
 		
 		var gr = new GlideRecord( si.table_payload );

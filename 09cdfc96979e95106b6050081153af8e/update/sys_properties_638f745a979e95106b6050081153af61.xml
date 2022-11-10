@@ -17,7 +17,7 @@
         <sys_scope display_value="Demo Slacker">09cdfc96979e95106b6050081153af8e</sys_scope>
         <sys_update_name>sys_properties_638f745a979e95106b6050081153af61</sys_update_name>
         <type>string</type>
-        <value>xoxb-4184996721600-4158362078501-LfTwiR95rvY1kuaO4gwCrptB</value>
+        <value/>
         <write_roles>x_803922_demo_slac.admin</write_roles>
     </sys_properties>
     <sys_translated_text action="delete_multiple" query="documentkey=638f745a979e95106b6050081153af61"/>

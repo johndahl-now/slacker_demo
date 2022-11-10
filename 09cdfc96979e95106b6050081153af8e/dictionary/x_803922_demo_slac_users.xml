@@ -7,7 +7,7 @@
         <element label="Last name" max_length="40" name="last_name" type="string"/>
         <element label="Phone" max_length="40" name="phone" type="string"/>
         <element attributes="ref_ac_columns=user_name;email,ref_ac_columns_search=true,ref_auto_complete=AJAXTableCompleter" label="ServiceNow user" max_length="32" name="servicenow_user" reference="sys_user" type="reference" unique="true"/>
-        <element label="Slack profile" max_length="4000" name="slack_profile" type="string"/>
+        <element attributes="json_view=true" label="Slack profile" max_length="4000" name="slack_profile" type="string"/>
         <element label="Slack ID" max_length="40" name="slack_username" type="string" unique="true"/>
         <element label="Title" max_length="100" name="title" type="string"/>
         <index name="index" unique="true">
